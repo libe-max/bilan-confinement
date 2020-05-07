@@ -82,9 +82,11 @@ class AppWrapper extends Component {
       pClientWidth !== clientWidth ||
       pClientHeight !== clientHeight) {
       window.dispatchEvent(new CustomEvent('lblb-client-dimensions-change'))
+      this.forceUpdate()
     }
     if (pCurrentDisplay !== window.LBLB_GLOBAL.current_display) {
       window.dispatchEvent(new CustomEvent('lblb-client-display-change'))
+      this.forceUpdate()
     }
   }
 

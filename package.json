@@ -2,8 +2,10 @@
   "name": "libe-apps-template",
   "version": "0.2.3",
   "private": true,
+  "homepage": "/apps/2020/05/bilan-confinement",
   "dependencies": {
     "libe-components": "^1.2.0",
+    "libe-utils": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",

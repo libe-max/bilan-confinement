@@ -1,0 +1,274 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.bilan-confinement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bilan-confinement__fixed-logo {
+  position: fixed;
+  right: 1rem;
+  width: 3rem;
+}
+
+.bilan-confinement__header {
+  display: flex;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding-bottom: 4rem;
+  min-height: calc(100vh - 50px);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2rem;
+}
+
+.bilan-confinement__header::before {
+  content: "";
+  background-color: #FAFCF0;
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;
+}
+
+.bilan-confinement__header::after {
+  content: "";
+  background-image: url('./images/1500x900.svg');
+  background-attachment: fixed;
+  opacity: .8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.bilan-confinement__header-inner {
+  background: rgba(255, 255, 255, .9);
+  padding: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14rem;
+  max-width: 46rem;
+}
+
+@media screen and (max-width: 63rem) {
+  .bilan-confinement__header {
+    padding-bottom: 3rem;
+    justify-content: flex-start;
+  }
+
+  .bilan-confinement__header:after {
+    background-image: url('./images/800x800.svg');
+  }
+
+  .bilan-confinement__header-inner {
+    background: rgba(255, 255, 255, .9);
+    margin-top: 80vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  .bilan-confinement__header {
+    padding-bottom: 2rem;
+  }
+
+  .bilan-confinement__header-inner {
+    margin-top: 50vh;
+    padding: 1rem;
+  }
+}
+
+.bilan-confinement__header
+  .lblb-slug,
+.bilan-confinement__header
+  .lblb-page-title,
+.bilan-confinement__header
+  .lblb-paragraph,
+.bilan-confinement__header
+  .lblb-article-meta {
+    margin-bottom: 2rem;
+}
+
+.bilan-confinement__header
+  .lblb-page-title {
+    font-family: 'Libe-Sans-Semicondensed';
+}
+
+.bilan-confinement__header
+  .lblb-share-article {
+    width: 9rem;
+}
+
+.bilan-confinement__header
+  .lblb-share-article__twitter-button,
+.bilan-confinement__header
+  .lblb-share-article__facebook-button {
+    background: transparent;
+}
+
+.bilan-confinement__article {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.bilan-confinement__anchors {
+  position: absolute;
+  left: 0;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.bilan-confinement__anchors .lblb-paragraph-title {
+  margin-top: 1rem;
+}
+
+.bilan-confinement__anchors .lblb-paragraph-title:first-child {
+  margin-top: 0;
+}
+
+.bilan-confinement__anchors .lblb-paragraph-title a {
+  text-decoration: none;
+  color: #212121;
+}
+
+@media screen and (max-width: 78rem) {
+  .bilan-confinement__anchors {
+    display: none;
+  }
+
+  .bilan-confinement__fixed-logo {
+    display: none;
+  }
+}
+
+.bilan-confinement__content {
+  width: 100%;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bilan-confinement__content > * {
+  max-width: 38rem;
+  width: calc(100% - 1rem);
+  z-index: 2;
+}
+
+.bilan-confinement__content > .bilan-confinement__h2 {
+  width: unset;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 63rem) {
+  .bilan-confinement__content > .bilan-confinement__h2 {
+    margin-left: .5rem;
+  }
+}
+
+.bilan-confinement__h3 .lblb-block-title {
+  letter-spacing: .03rem;
+}
+
+.bilan-confinement__h4 .lblb-paragraph {
+  line-height: 1.5rem;
+}
+
+.bilan-confinement__h3 .lblb-block-title span,
+.bilan-confinement__h4 .lblb-paragraph span {
+  display: inline-block;
+  max-width: 28rem;
+}
+
+.bilan-confinement__h4 .lblb-paragraph span {
+  color: #e91845;
+}
+
+.bilan-confinement__h2 {
+  margin-top: 3rem;
+  background: #e91845;
+  padding: .5rem;
+}
+
+.bilan-confinement__h2 .lblb-section-title span {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .05rem;
+}
+
+.bilan-confinement__h2 .lblb-section-title {
+  display: inline-block;
+}
+
+.bilan-confinement__h2:first-child {
+  margin-top: 0;
+}
+
+.bilan-confinement__paragraph {
+  margin-top: 1rem;
+}
+
+.bilan-confinement__h3 {
+  margin-top: 2rem;
+}
+
+.bilan-confinement__image {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 0 2rem 0 rgba(33, 33, 33, .1);
+  z-index: 1;
+  padding: 1rem;
+}
+
+.bilan-confinement__image img {
+  width: 100%;
+  height: auto;
+}
+
+.bilan-confinement__annotation {
+  margin-top: .5rem;
+}
+
+.bilan-confinement__annotation span {
+  color: #999999;
+}
+
+.lblb-default-apps-footer > * { margin: .5rem 0; }
+
+.lblb-default-apps-footer > .lblb-libe-labo-logo { margin: 1rem 0; }
+
+@media screen and (max-width: 63rem) {
+  .lblb-default-apps-footer > * { margin: .5rem 0; }
+  .lblb-default-apps-footer > .lblb-libe-labo-logo { margin: 1rem 0; }
+}
+
+@media screen and (max-width: 40rem) {
+  .lblb-default-apps-footer > * { margin: .5rem 0; }
+  .lblb-default-apps-footer > .lblb-libe-labo-logo { margin: 1rem 0; }
+}
