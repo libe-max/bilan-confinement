@@ -77,6 +77,24 @@ export default class App extends Component {
 
   /* * * * * * * * * * * * * * * * *
    *
+   * DID UPDATE
+   *
+   * * * * * * * * * * * * * * * * */
+  componentDidUpdate () {
+    if (this.$downArticleMeta) {
+      const downCurrent = this.$downArticleMeta.innerHTML
+      const downReplaced = downCurrent.replace(/ à [0-9][0-9]:[0-9][0-9]/, '')
+      this.$downArticleMeta.innerHTML = downReplaced
+    }
+    if (this.$topArticleMeta) {
+      const topCurrent = this.$topArticleMeta.innerHTML
+      const topReplaced = topCurrent.replace(/ à [0-9][0-9]:[0-9][0-9]/, '')
+      this.$topArticleMeta.innerHTML = topReplaced
+    }
+  }
+
+  /* * * * * * * * * * * * * * * * *
+   *
    * FETCH CREDENTIALS
    *
    * * * * * * * * * * * * * * * * */
@@ -152,6 +170,11 @@ export default class App extends Component {
     if (lastTenKeys.join(',') === konamiCodeStr) this.setState({ konami_mode: true })
   }
 
+  /* * * * * * * * * * * * * * * * *
+   *
+   * MAKE ANCHORS STICKY
+   *
+   * * * * * * * * * * * * * * * * */
   makeAnchorsSticky (e) {
     const $anchors = document.querySelector(`.${this.c}__anchors`)
     if (!$anchors) return
@@ -305,9 +328,9 @@ export default class App extends Component {
             literary>
             <JSXInterpreter content={intro} />
           </Paragraph>
-          <ArticleMeta
+          <span ref={node => this.$topArticleMeta = node}><ArticleMeta
             publishedOn='08/05/2020 10:12'
-            authors={[{ name: 'Libé Labo', role: 'Production', link: 'https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538' }]} />
+            authors={[{ name: 'Libé Labo', role: 'Production', link: 'https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538' }]} /></span>
           <ShareArticle
             short
             iconsOnly
@@ -321,7 +344,7 @@ export default class App extends Component {
       </div>
       <div className='lblb-default-apps-footer'>
         <ShareArticle short iconsOnly tweet={props.meta.tweet} url={props.meta.url} />
-        <ArticleMeta
+        <span ref={node => this.$downArticleMeta = node}><ArticleMeta
           publishedOn='08/05/2020 10:12'
           authors={[
             { name: 'Baptiste Bouthier', role: '', link: 'https://www.liberation.fr/auteur/12359-baptiste-bouthier' },
@@ -330,9 +353,10 @@ export default class App extends Component {
             { name: 'Alice Clair', role: 'Infographies', link: 'https://www.liberation.fr/auteur/20783-alice-clair' },
             { name: 'Julien Guillot', role: 'Infographies', link: 'https://www.liberation.fr/auteur/15107-julien-guillot' },
             { name: 'Christelle Perrin', role: 'Infographies', link: 'https://www.liberation.fr/auteur/20527-christelle-perrin' },
+            { name: 'Christelle Causse', role: 'Design et développement', link: 'https://www.liberation.fr/auteur/18526-christelle-causse' },
             { name: 'Maxime Fabas', role: 'Design et développement', link: 'https://www.liberation.fr/auteur/19310-maxime-fabas' },
             { name: 'Libé Labo', role: 'Production', link: 'https://www.liberation.fr/libe-labo-data-nouveaux-formats,100538' }
-          ]} />
+          ]} /></span>
         <LibeLaboLogo target='blank' />
       </div>
     </div>
