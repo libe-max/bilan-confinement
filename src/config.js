@@ -24,7 +24,8 @@ const config = {
     ? 'https://libe-labo-2.site/api'
     : `${currentProtocol}//${currentHostname}:3004/api`,
   stylesheet: '',
-  spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRjonBP75KzKDxp_77Fo7ejqUq7vcj1a92v0xtXmEHiJZwbsRxmSh-klwLMXJdfY1_51dO6CiH4inFE/pub?gid=0&single=true&output=tsv'
+  // spreadsheet: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRjonBP75KzKDxp_77Fo7ejqUq7vcj1a92v0xtXmEHiJZwbsRxmSh-klwLMXJdfY1_51dO6CiH4inFE/pub?gid=0&single=true&output=tsv'
+  spreadsheet: './data.tsv'
 }
 
 module.exports = config
